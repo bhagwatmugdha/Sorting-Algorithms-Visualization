@@ -7,6 +7,10 @@
 
     <title>Sorting Algorithms Visualizer</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="sortingAlgorithmsVisualizerFavicon.png"
+        type="image/gif" sizes="16x16">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
@@ -16,23 +20,19 @@
 
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-        crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-        crossorigin="anonymous"></script>
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #ffffff;">
         <a href="https://github.com/bhagwatmugdha/Sorting-Algorithms-Visualization" target="_blank"
-            class="navbar-brand">Sorting Algorithms Visualizer</a>
+            style="font-size: x-large; text-align: center; color: #0E69D8;" class="navbar-brand">
+            <strong>
+                Sorting Algorithms Visualizer
+            </strong>
+        </a>
+
         <div class="container">
 
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -50,10 +50,12 @@
                         <option value='optimizedbubblesort'>Optimized Bubble sort</option>
                         <option value='selectionsort'>Selection sort</option>
                         <option value='insertionsort'>Insertion sort</option>
-                        <!-- <option value='quicksortfirst'>Quicksort with first element as Pivot</option> -->
-                        <!-- <option value='quicksortlast'>Quicksort with last element as Pivot</option> -->
-                        <!-- <option value='quicksortmiddle'>Quicksort with middle element as Pivot</option> -->
-                        <!-- <option value='quicksortrandom'>Quicksort with random element as Pivot</option> -->
+
+                        <!-- <option value='quicksortfirst'>Quicksort with first element as Pivot</option>
+                        <option value='quicksortlast'>Quicksort with last element as Pivot</option>
+                        <option value='quicksortmiddle'>Quicksort with middle element as Pivot</option>
+                        <option value='quicksortrandom'>Quicksort with random element as Pivot</option> -->
+
                         <!-- <option value='mergesort'>Merge sort</option> -->
                         <!-- <option value='heapsort'>Heapsort</option> -->
                     </select>
@@ -70,29 +72,21 @@
                     <button id="startButton" class="btn btn-primary btn-lg float-right"
                         onClick={startSort()}>Start</button>
                 </div>
-
-                <!-- <div class="col">
-                        <div class="playpause" title="[shortcut] press 'SPACE'">
-                            <input type="checkbox" value="None" id="playpause" name="check" />
-                            <label for="playpause" tabindex=1></label>
-                        </div>
-                    </div> -->
-
-                <!-- </div> -->
-
             </div>
         </div>
 
         <div class="mr-4">
-            <a href="https://github.com/bhagwatmugdha/" target="_blank">
+            <a href="https://github.com/bhagwatmugdha/" target="_blank" style="font-size: xx-large;">
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
-            <a href="https://www.linkedin.com/in/mugdhabhagwat/" target="_blank">
+            <a href="https://www.linkedin.com/in/mugdhabhagwat/" target="_blank" style="font-size: xx-large;">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
         </div>
 
     </nav>
+
+    <hr>
 
     <div class="container my-2">
         <div class="row">

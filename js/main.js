@@ -4,6 +4,9 @@ numberOfElementsSlider.addEventListener('input', e => {
     numberOfElementsValue.textContent = numberOfElementsSlider.value;
 });
 
+let sortingAlgorithm;
+let algorithmStep;
+
 let elementList;
 let minimumElement;
 let maximumElement;
@@ -14,11 +17,15 @@ let comparingIndex2;
 let swapIndex1;
 let swapIndex2;
 
+let pivotIndex;
+
 async function startSort() {
     document.getElementById('startButton').disabled = true;
-    let sortingAlgorithm = document.getElementById('sortingAlgorithm').value;
+    sortingAlgorithm = document.getElementById('sortingAlgorithm').value;
     let numberOfElements = document.getElementById('numberOfElemsSlider').value;
 
+    algorithmStep = '';
+    
     elementList = [];
     printOriginalArray(elementList, 'sortedArray');
 
@@ -44,18 +51,22 @@ async function startSort() {
             break;
 
         // case 'quicksortfirst':
+        //     sortingAlgorithm = 'quicksort';
         //     elementList = await quicksortmain(elementList, 'first');
         //     break;
 
         // case 'quicksortlast':
+        //     sortingAlgorithm = 'quicksort';
         //     elementList = await quicksortmain(elementList, 'last');
         //     break;
 
         // case 'quicksortmiddle':
+        //     sortingAlgorithm = 'quicksort';
         //     elementList = await quicksortmain(elementList, 'middle');
         //     break;
 
         // case 'quicksortrandom':
+        //     sortingAlgorithm = 'quicksort';
         //     elementList = await quicksortmain(elementList, 'random');
         //     break;
 

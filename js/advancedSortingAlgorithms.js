@@ -1,96 +1,76 @@
-async function choose_pivot(elementList, pivot_type, left, right) {
+function choose_pivot(elementList, pivotType, left, right) {
+    if (typeof (left) === 'undefined') {
+        left = 0;
+    }
+ 
+    if (typeof (right) === 'undefined') {
+        right = elementList.length - 1;
+    }
 
-    if (typeof (left) === 'undefined') left = 0;
-    if (typeof (right) === 'undefined') right = elementList.length() - 1;
-    
     var pivot = null;
-    
-    if (pivot_type === 'random') {
-        pivot = randint(left, right);
-    } else if (pivot_type === 'first') {
+
+    if (pivotType === 'random') {
+        pivot = Math.floor(Math.random() * (right - left + 1) + left);;
+    } else if (pivotType === 'first') {
         pivot = left;
-    } else if (pivot_type === 'last') {
+    } else if (pivotType === 'last') {
         pivot = right;
-    } else if (pivot_type === 'middle') {
+    } else if (pivotType === 'middle') {
         pivot = Math.round((left + right) / 2);
-    } 
-    
+    }
+
     return pivot;
 }
 
 
-async function partition(elementList, pivot_type, left, right) {
+async function partition(elementList, pivotType, left, right) {
+    var pivot = choose_pivot(elementList, pivotType, left, right);
 
-    var pivot = await choose_pivot(elementList, pivot_type, left, right);
-    
-    swapIndex1 = pivot;
-    swapIndex2 = right;
+    // pivotIndex = pivot;
+    // await delay(1000);
+
+    // console.log("here!")
 
     swap(elementList, pivot, right);
 
-    await delay(1000);
-
-    swapIndex1 = -1;
-    swapIndex2 = -1;
-
     // Partition the array around the pivot.
-    
     pivot = left;
-    
     for (var i = left; i < right; i++) {
-
         if (elementList[i] < elementList[right]) {
             if (i != pivot) {
-                swapIndex1 = i;
-                swapIndex2 = pivot;
-
                 swap(elementList, i, pivot);
-
-                await delay(1000);
-
-                swapIndex1 = -1;
-                swapIndex2 = -1;
             }
             pivot += 1
         }
     }
-
-    swapIndex1 = right;
-    swapIndex2 = pivot;
-
     swap(elementList, right, pivot);
-
-    await delay(1000);
-
-    swapIndex1 = -1;
-    swapIndex2 = -1;
 
     return pivot;
 }
 
 
-async function quicksort(elementList, pivot_type, left, right) {
-    
-    var numberOfElements = elementList.length;
-    
-    if (typeof (left) === 'undefined') left = 0;
-    if (typeof (right) === 'undefined') right = numberOfElements - 1;
+async function quicksort(elementList, pivotType, left, right) {
+    if (typeof (left) === 'undefined') {
+        left = 0;
+    }
+ 
+    if (typeof (right) === 'undefined') {
+        right = elementList.length - 1;
+    }
 
     if (left >= right) return;
 
-    var pivot = partition(elementList, pivot_type, left, right);
+    var pivot = partition(elementList, pivotType, left, right);
 
-    await delay(2000);
+    // await delay(1000);
 
-    await quicksort(elementList, pivot_type, left, pivot - 1);
-    await quicksort(elementList, pivot_type, pivot + 1, right);
+    quicksort(elementList, pivotType, left, pivot - 1);
 
-    swapIndex1 = -1;
-    swapIndex2 = -1;
+    quicksort(elementList, pivotType, pivot + 1, right);
 }
 
-async function quicksortmain(elementList, pivot_type) {
-    await quicksort(elementList, pivot_type);
+async function quicksortmain(elementList, pivotType) {
+    await quicksort(elementList, pivotType);
 
     return elementList;
 }
