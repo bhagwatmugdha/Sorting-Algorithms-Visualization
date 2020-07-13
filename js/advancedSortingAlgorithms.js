@@ -61,6 +61,9 @@ async function partition(elementList, pivot_type, left, right) {
         algorithmStep = 'Comparing element at left with pivot: ' + elementList[comparingIndex1] + ' and ' + elementList[comparingIndex2];
         await delay(1500);
 
+        comparingIndex1 = -1;
+        comparingIndex2 = -1;
+
         if (elementList[i] < elementList[right]) {
             if (i != pivot) {
                 swapIndex1 = i;
@@ -80,10 +83,6 @@ async function partition(elementList, pivot_type, left, right) {
             algorithmStep = 'Element is not smaller that pivot';
             await delay(500);
         }
-
-
-        comparingIndex1 = -1;
-        comparingIndex2 = -1;
     }
 
     swapIndex1 = right;
@@ -116,6 +115,15 @@ async function quicksort(elementList, pivot_type, left, right) {
 
     if (left >= right) return;
 
+    arrayInFocus = [];
+    arrayInFocus.push(left);
+    arrayInFocus.push(right);
+
+    algorithmStep = 'Current array in focus is from index ' + left + ' till index ' + right;
+    await delay(1500);
+
+    algorithmStep = '';
+
     var pivot = await partition(elementList, pivot_type, left, right);
 
     await quicksort(elementList, pivot_type, left, pivot - 1);
@@ -130,6 +138,8 @@ async function quicksortmain(elementList, pivotType) {
     comparingIndex1 = -1;
     comparingIndex2 = -1;
     pivotIndex = -1;
+
+    arrayInFocus = [];
 
     algorithmStep = 'Sorting complete!';
 

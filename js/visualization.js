@@ -51,6 +51,12 @@ function quicksortVisualization() {
 
             stroke('#000000');
             fill('#000000');
+            
+            if(element >= arrayInFocus[0] && element <= arrayInFocus[1]) {
+                stroke('#00FFFF');
+                fill('#00FFFF');
+            }
+            
             text(element, xCoord + 10, yCoord + height + 40);
 
             if (element == comparingIndex1 || element == comparingIndex2 || element == swapIndex1 || element == swapIndex2 || element == pivotIndex) {
@@ -59,7 +65,6 @@ function quicksortVisualization() {
             }
 
             textSize(24);
-
             text(elementList[element], xCoord + 10, yCoord + height - 20);
 
 

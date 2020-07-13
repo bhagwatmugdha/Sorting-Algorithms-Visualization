@@ -19,6 +19,8 @@ let swapIndex2;
 
 let pivotIndex;
 
+let arrayInFocus = [];
+
 async function startSort() {
     document.getElementById('startButton').disabled = true;
     sortingAlgorithm = document.getElementById('sortingAlgorithm').value;
