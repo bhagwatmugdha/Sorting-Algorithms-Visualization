@@ -50,25 +50,25 @@ async function startSort() {
             elementList = await insertionsort(elementList);
             break;
 
-        // case 'quicksortfirst':
-        //     sortingAlgorithm = 'quicksort';
-        //     elementList = await quicksortmain(elementList, 'first');
-        //     break;
+        case 'quicksortfirst':
+            sortingAlgorithm = 'quicksort';
+            elementList = await quicksortmain(elementList, 'first');
+            break;
 
-        // case 'quicksortlast':
-        //     sortingAlgorithm = 'quicksort';
-        //     elementList = await quicksortmain(elementList, 'last');
-        //     break;
+        case 'quicksortlast':
+            sortingAlgorithm = 'quicksort';
+            elementList = await quicksortmain(elementList, 'last');
+            break;
 
-        // case 'quicksortmiddle':
-        //     sortingAlgorithm = 'quicksort';
-        //     elementList = await quicksortmain(elementList, 'middle');
-        //     break;
+        case 'quicksortmiddle':
+            sortingAlgorithm = 'quicksort';
+            elementList = await quicksortmain(elementList, 'middle');
+            break;
 
-        // case 'quicksortrandom':
-        //     sortingAlgorithm = 'quicksort';
-        //     elementList = await quicksortmain(elementList, 'random');
-        //     break;
+        case 'quicksortrandom':
+            sortingAlgorithm = 'quicksort';
+            elementList = await quicksortmain(elementList, 'random');
+            break;
 
         default:
             break;

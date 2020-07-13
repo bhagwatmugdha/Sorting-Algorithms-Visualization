@@ -66,23 +66,41 @@ function quicksortVisualization() {
             xCoord += 2 * barWidth;
         }
 
-        stroke('#0080FF');
-        fill('#0080FF');
-        rect(leftSpacing, 9 * CANVAS_HEIGHT / 10, 200, 50);
+        stroke('#000000');
+        fill('#000000');
+        rect(25, 5, 200, 50);
 
         stroke('#FFFFFF');
         fill('#FFFFFF');
         textSize(24);
-        text('Comparisons', leftSpacing + 25, 9 * CANVAS_HEIGHT / 10 + 35);
+        text('Pivot', 90, 40);
+
+        stroke('#0080FF');
+        fill('#0080FF');
+        rect(275, 5, 200, 50);
+
+        stroke('#FFFFFF');
+        fill('#FFFFFF');
+        textSize(24);
+        text('Comparisons', 300, 40);
 
         stroke('#3FE0D0');
         fill('#3FE0D0');
-        rect(leftSpacing + 250, 9 * CANVAS_HEIGHT / 10, 200, 50);
+        rect(525, 5, 200, 50);
 
         stroke('#FFFFFF');
         fill('#FFFFFF');
         textSize(24);
-        text('Swaps', leftSpacing + 315, 9 * CANVAS_HEIGHT / 10 + 35);
+        text('Swaps', 590, 40);
+
+        stroke('#73C2FB');
+        fill('#73C2FB');
+        rect(775, 5, 800, 50);
+
+        stroke('#000000');
+        fill('#000000');
+        textSize(24);
+        text(algorithmStep, 810, 40);
     }
 }
 
@@ -139,30 +157,30 @@ function basicVisualization() {
 
         stroke('#0080FF');
         fill('#0080FF');
-        rect(150 + 5, 5, 200, 50);
+        rect(155, 5, 200, 50);
 
         stroke('#FFFFFF');
         fill('#FFFFFF');
         textSize(24);
-        text('Comparisons', 30 + 150, 40);
+        text('Comparisons', 180, 40);
 
         stroke('#3FE0D0');
         fill('#3FE0D0');
-        rect(255 + 150, 5, 200, 50);
+        rect(405, 5, 200, 50);
 
         stroke('#FFFFFF');
         fill('#FFFFFF');
         textSize(24);
-        text('Swaps', 320 + 150, 40);
-                
+        text('Swaps', 470, 40);
+
         stroke('#73C2FB');
         fill('#73C2FB');
-        rect(505 + 150, 5, 800, 50);
+        rect(655, 5, 800, 50);
 
         stroke('#000000');
         fill('#000000');
         textSize(24);
-        text(algorithmStep, 545 + 150, 40);
+        text(algorithmStep, 695, 40);
     }
 }
 
