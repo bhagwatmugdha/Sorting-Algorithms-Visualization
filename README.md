@@ -15,7 +15,7 @@
 
 ## Demo
 <p align="center">
-<img width=900px src="demo.webm" alt="demo">
+<img width=900px src="demo.gif" alt="demo">
 <p>
   
 ## Sorting Algorithms visualized:
