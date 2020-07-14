@@ -23,10 +23,10 @@
 * Optimized Bubble sort
 * Selection sort
 * Insertion sort
-
-### Upcoming algorithms:
 * Quicksort
 * Heap sort
+
+### Upcoming algorithms:
 * Merge sort
 
 
