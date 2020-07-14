@@ -154,6 +154,7 @@ async function constructMaxHeap(input, i, numberOfElements) {
     var max = i;
     
     comparingIndex1 = i;
+    pivotIndex = max;
     algorithmStep = 'Comparing the element at index ' + i + ' to its children (if any)' //left child (' + left + ') and right child (' + right + ')';
     await delay(1500);
 
@@ -173,6 +174,7 @@ async function constructMaxHeap(input, i, numberOfElements) {
 
         if (input[left] > input[max]) {
             max = left;
+            pivotIndex = max;
             algorithmStep = 'Maximum elment is the left child';
             await delay(1500);
             algorithmStep = '';
@@ -192,11 +194,14 @@ async function constructMaxHeap(input, i, numberOfElements) {
 
         if (right < numberOfElements && input[right] > input[max]) {
             max = right;
+            pivotIndex = max;
             algorithmStep = 'Maximum elment is the right child';
             await delay(1500);
             algorithmStep = '';
         }
     }
+    
+    pivotIndex = -1;
 
     if (max != i) {
         swapIndex1 = i;
@@ -224,6 +229,10 @@ async function heapsort(elementList) {
 
     let numberOfElements = elementList.length;
 
+    arrayInFocus = [];
+    arrayInFocus.push(0);
+    arrayInFocus.push(numberOfElements - 1);
+
     algorithmStep = 'Creating a Max Heap';
     await delay(1500);
 
@@ -247,11 +256,17 @@ async function heapsort(elementList) {
         swapIndex2 = -1;
         
         algorithmStep = 'Bubbling the ' + elementList[0] + ' into its place in the Max Heap';
-        await delay(1000);
-
-        algorithmStep = '';
         
         numberOfElements--;
+        
+        arrayInFocus = [];
+        arrayInFocus.push(0);
+        arrayInFocus.push(numberOfElements - 1);
+        
+        await delay(1000);
+        
+        algorithmStep = '';
+
         await constructMaxHeap(elementList, 0, numberOfElements);
     }
 
@@ -259,6 +274,8 @@ async function heapsort(elementList) {
     comparingIndex2 = -1;
     swapIndex1 = -1;
     swapIndex2 = -1;
+
+    arrayInFocus = [];
 
     algorithmStep = 'Sorting complete!';
 

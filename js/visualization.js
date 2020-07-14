@@ -51,12 +51,12 @@ function quicksortVisualization() {
 
             stroke('#000000');
             fill('#000000');
-            
-            if(element >= arrayInFocus[0] && element <= arrayInFocus[1]) {
+
+            if (element >= arrayInFocus[0] && element <= arrayInFocus[1]) {
                 stroke('#00FFFF');
                 fill('#00FFFF');
             }
-            
+
             text(element, xCoord + 10, yCoord + height + 40);
 
             if (element == comparingIndex1 || element == comparingIndex2 || element == swapIndex1 || element == swapIndex2 || element == pivotIndex) {
@@ -79,6 +79,105 @@ function quicksortVisualization() {
         fill('#FFFFFF');
         textSize(24);
         text('Pivot', 90, 40);
+
+        stroke('#0080FF');
+        fill('#0080FF');
+        rect(275, 5, 200, 50);
+
+        stroke('#FFFFFF');
+        fill('#FFFFFF');
+        textSize(24);
+        text('Comparisons', 300, 40);
+
+        stroke('#3FE0D0');
+        fill('#3FE0D0');
+        rect(525, 5, 200, 50);
+
+        stroke('#FFFFFF');
+        fill('#FFFFFF');
+        textSize(24);
+        text('Swaps', 590, 40);
+
+        stroke('#73C2FB');
+        fill('#73C2FB');
+        rect(775, 5, 800, 50);
+
+        stroke('#000000');
+        fill('#000000');
+        textSize(24);
+        text(algorithmStep, 810, 40);
+    }
+}
+
+function heapsortVisualization() {
+    if (elementList) {
+        stroke('#73C2FB');
+        fill('#73C2FB');
+
+        findMinMaxElement();
+
+        const numberOfElements = elementList.length;
+        const barWidth = 50;
+        const leftSpacing = (CANVAS_WIDTH - (2 * numberOfElements - 1) * barWidth) / 2;
+
+        let xCoord = leftSpacing;
+
+        for (element in elementList) {
+            stroke('#73C2FB');
+            fill('#73C2FB');
+
+            if (element == pivotIndex) {
+                stroke('#000000');
+                fill('#000000');
+            }
+
+            if (element == comparingIndex1 || element == comparingIndex2) {
+                stroke('#0080FF');
+                fill('#0080FF');
+            }
+
+            if (element == swapIndex1 || element == swapIndex2) {
+                stroke('#3FE0D0');
+                fill('#3FE0D0');
+            }
+
+            let height = findHeight(elementList[element]);
+
+            let yCoord = 4 / 5 * CANVAS_HEIGHT - height;
+
+            rect(xCoord, yCoord, barWidth, height);
+
+
+            stroke('#000000');
+            fill('#000000');
+
+            if (element >= arrayInFocus[0] && element <= arrayInFocus[1]) {
+                stroke('#00FFFF');
+                fill('#00FFFF');
+            }
+
+            text(element, xCoord + 10, yCoord + height + 40);
+
+            if (element == comparingIndex1 || element == comparingIndex2 || element == swapIndex1 || element == swapIndex2 || element == pivotIndex) {
+                stroke('#FFFFFF');
+                fill('#FFFFFF');
+            }
+
+            textSize(24);
+            text(elementList[element], xCoord + 10, yCoord + height - 20);
+
+
+            xCoord += 2 * barWidth;
+        }
+
+        stroke('#000000');
+        fill('#000000');
+        rect(25, 5, 200, 50);
+
+        stroke('#FFFFFF');
+        fill('#FFFFFF');
+        textSize(24);
+        text('Maximum', 60, 40);
 
         stroke('#0080FF');
         fill('#0080FF');
@@ -196,6 +295,8 @@ function draw() {
 
     if (sortingAlgorithm == 'quicksort') {
         quicksortVisualization();
+    } else if(sortingAlgorithm == 'heapsort') {
+        heapsortVisualization();
     } else {
         basicVisualization();
     }
