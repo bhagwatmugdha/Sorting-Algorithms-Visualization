@@ -71,6 +71,10 @@ async function startSort() {
             sortingAlgorithm = 'quicksort';
             elementList = await quicksortmain(elementList, 'random');
             break;
+        
+        case 'heapsort':
+            elementList = await heapsort(elementList);
+            break;
 
         default:
             break;
