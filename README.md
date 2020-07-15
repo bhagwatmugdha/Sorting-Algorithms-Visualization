@@ -26,14 +26,6 @@
 * Quicksort
 * Heap sort
 
-### Upcoming algorithms:
-* Merge sort
-
-
-
-
-
-
 <!-- CONTACT -->
 ## Contact
 
